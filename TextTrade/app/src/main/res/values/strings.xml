@@ -1,4 +1,5 @@
 <resources>
+    <string name="search_hint">Enter Name or ISBN</string>
     <string name="app_name">TextTrade</string>
     <string name="action_settings">Settings</string>
 
