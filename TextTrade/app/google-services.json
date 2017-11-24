@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "132246961219",
+    "firebase_url": "https://fir-texttrade.firebaseio.com",
+    "project_id": "firebase-texttrade",
+    "storage_bucket": "firebase-texttrade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132246961219:android:605d7946e3948a26",
+        "android_client_info": {
+          "package_name": "com.squad.afro.texttrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132246961219-jisrud5l8661j1of6vqm7ot1u8ajkkuo.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "132246961219-30h9oeign9s14e72qujo2avtec3erp9t.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "132246961219-4bi8jvoqdbk7317vbs7fv3lv9okcsjb5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.squad.afro.texttrade",
+            "certificate_hash": "da06ee020e8149f953f324ae88ecc73b55370e60"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4LK5-wOS1CgydMVF67FAxkBFsFhhZYio"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132246961219-jisrud5l8661j1of6vqm7ot1u8ajkkuo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
