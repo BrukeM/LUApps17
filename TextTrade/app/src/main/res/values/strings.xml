@@ -1,6 +1,14 @@
 <resources>
     <string name="search_hint">Enter Name or ISBN</string>
+    <string name="user">User</string>
+    <string name="email">Email</string>
     <string name="app_name">TextTrade</string>
+    <string name="bName">Book Title</string>
+    <string name="bEdition">Edition</string>
+    <string name="bPrice">Price</string>
+    <string name="seller">Seller</string>
+    <string name="isbn">ISBN</string>
+    <string name="bClass">Class</string>
     <string name="action_settings">Settings</string>
     <string name="disposing">Selling</string>
     <string name="purchasing">Buying</string>

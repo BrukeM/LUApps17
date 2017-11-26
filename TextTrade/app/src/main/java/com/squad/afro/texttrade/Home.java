@@ -6,16 +6,14 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.ResultCodes;
+import com.firebase.ui.auth.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,11 +27,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "GoogleActivity";
@@ -43,20 +42,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        mAuth = FirebaseAuth.getInstance();
-
 
         //Set up Sign in for Lehigh Email
         List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build());
+                    new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build());
 
-        startActivityForResult(
+          startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
@@ -76,34 +69,16 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_WIDE);
 
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
+        signInButton.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
+
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return true;
-    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_SIGN_IN) {
@@ -116,12 +91,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 // ...
+                updateUI(null);
             }
         }
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         // Check for existing Google Sign In account, if the user is already signed in
     // the GoogleSignInAccount will be non-null.
@@ -174,7 +150,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         if (user != null) {
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
 
-            Intent signInToMain = new Intent("name.student.Feed");
+            Intent signInToMain = new Intent(this, Profile.class);
             startActivity(signInToMain);
         }
         else {
