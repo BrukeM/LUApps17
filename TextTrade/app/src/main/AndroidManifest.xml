@@ -49,7 +49,12 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".ListItemActivity"></activity>
+        <activity android:name=".ListItemActivity" />
+        <activity
+            android:name=".DraweMenuActivity"
+            android:label="@string/title_activity_drawe_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FeedActivity"></activity>
     </application>
 
 </manifest>

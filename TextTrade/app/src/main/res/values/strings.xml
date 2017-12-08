@@ -1,4 +1,6 @@
 <resources>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="search_hint">Enter Name or ISBN</string>
     <string name="user">User</string>
     <string name="email">Email</string>
@@ -154,4 +156,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_drawe_menu">DraweMenuActivity</string>
 </resources>

@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import io.realm.RealmChangeListener;
+
 /**
  * Created by romeo on 11/25/2017.
  */
@@ -46,15 +48,18 @@ public class BookAdapter extends ArrayAdapter<Book> {
         TextView seller = convertView.findViewById(R.id.seller);
         ImageView bookPic = convertView.findViewById(R.id.bPic);
 
-        bookName.setText(curBook.mBookTitle);
-        bookISBN.setText(curBook.mISBN);
-        bookEdition.setText(curBook.mBookEdition);
-        Class.setText(curBook.mClass);
-        bookPrice.setText(curBook.mBookprice.toString());
-        String email = curBook.mUser;
+        bookName.setText(curBook.getmBookTitle());
+        bookISBN.setText(curBook.getmISBN());
+        bookEdition.setText(curBook.getmBookEdition());
+        Class.setText(curBook.getmClass());
+        bookPrice.setText(curBook.getmBookprice().toString());
+        String email = curBook.getmUser();
         seller.setText(email);
-        bookPic.setImageURI(curBook.mBookPic);
 
     return convertView;
+    }
+
+    public static void onDataChange(RealmChangeListener changeListener) {
+       // changeListener.onChange();
     }
 }

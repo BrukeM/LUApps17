@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_profile"
+          android:title="Profile"
+          android:icon="@mipmap/ic_person_black_48dp" />
+    <item android:id="@+id/nav_buy"
+          android:title="Buy"
+          android:icon="@mipmap/ic_shopping_cart_black_24dp" />
+    <item android:id="@+id/nav_sell"
+          android:title="Sell"
+          android:icon="@mipmap/ic_library_books_black_24dp" />
+    <item android:id="@+id/nav_settings"
+          android:title="Setting"
+          android:icon="@mipmap/ic_settings_black_48dp" />
+    <item android:id="@+id/nav_logout"
+          android:title="Log out"
+          android:icon="@mipmap/ic_eject_black_24dp" />
+</menu>

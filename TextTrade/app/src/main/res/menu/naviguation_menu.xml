@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/naviguation_menu">
+
+        <item android:id="@+id/nav_profile"
+            android:icon="@mipmap/ic_person_black_48dp"
+            android:title="Profile" />
+        <item android:id="@+id/nav_buy"
+            android:icon="@mipmap/ic_library_books_black_24dp"
+            android:title="Buy" />
+        <item android:id="@+id/nav_sell"
+            android:icon="@mipmap/ic_library_books_black_24dp"
+            android:title="Sell" />
+        <item android:id="@+id/nav_settings"
+            android:icon="@mipmap/ic_settings_black_48dp"
+            android:title="Settings"/>
+        <item android:id="@+id/nav_logout"
+            android:icon="@mipmap/ic_eject_black_24dp"
+              android:title="Log out"/>
+
+</menu>

@@ -68,7 +68,7 @@ public class Profile extends AppCompatActivity {
         feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Profile.this, Feed.class);
+                Intent i = new Intent(Profile.this, FeedActivity .class);
                 startActivity(i);
             }
         });
